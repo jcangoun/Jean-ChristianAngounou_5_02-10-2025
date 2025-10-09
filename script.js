@@ -1,0 +1,10 @@
+let leBanner = document.getElementById("banner");
+console.log(leBanner);
+let leftSpan = document.createElement("span");
+leftSpan.setAttribute("id", "leftspan");
+leBanner.appendChild(leftSpan);
+console.log(leftspan);
+let rightSpan = document.createElement("span");
+rightSpan.setAttribute("id", "rightspan");
+leBanner.appendChild(rightSpan);
+console.log(rightspan);
