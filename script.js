@@ -8,3 +8,8 @@ let rightSpan = document.createElement("span");
 rightSpan.setAttribute("id", "rightspan");
 leBanner.appendChild(rightSpan);
 console.log(rightspan);
+testDiv = document.createElement("div");
+testDiv.setAttribute("id", "testDiv");
+console.log(testDiv);
+leBanner.insertAdjacentElement(testDiv);
+console.log(leBanner);
