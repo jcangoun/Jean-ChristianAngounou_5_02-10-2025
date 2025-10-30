@@ -43,6 +43,7 @@ arrow_right.addEventListener("click", (e) => {
   }
   leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
   paragraphe.innerHTML = slides[counter].tagLine;
+  console.log(counter);
 });
 
 //  Flèche gauche
@@ -54,13 +55,23 @@ arrow_left.addEventListener("click", (e) => {
   }
   leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
   paragraphe.innerHTML = slides[counter].tagLine;
+  console.log(counter);
 });
 
 // Recuperation des dots : 
 
 const dots = document.querySelectorAll(".dot");
-console.log("dots" + dots);
 
+dots.forEach(dot => {
+  dot.addEventListener("click", (e) => {
+    // On retire "dot_selected" de tous les dots
+    dots.forEach(d => d.classList.remove("dot_selected"));
+    
+    // On ajoute "dot_selected" uniquement à celui qu'on vient de cliquer
+    e.target.classList.add("dot_selected");
+    console.log(e.target);
+  });
+});
 
 // Fonction pour mettre à jour l'affichage
 
