@@ -45,6 +45,10 @@ arrow_right.addEventListener("click", (e) => {
   paragraphe.innerHTML = slides[counter].tagLine;
   console.log(counter);
 });
+updateDots();
+
+// je fais une une reattribution de dots
+  updateDots(); // 🔹 mise à jour visuelle des dots
 
 //  Flèche gauche
 arrow_left.addEventListener("click", (e) => {
@@ -61,6 +65,7 @@ arrow_left.addEventListener("click", (e) => {
 // Recuperation des dots : 
 
 const dots = document.querySelectorAll(".dot");
+const counterIded = counter + 1;
 
 dots.forEach(dot => {
   dot.addEventListener("click", (e) => {
@@ -70,8 +75,10 @@ dots.forEach(dot => {
     // On ajoute "dot_selected" uniquement à celui qu'on vient de cliquer
     e.target.classList.add("dot_selected");
     console.log(e.target);
+
   });
 });
+
 
 // Fonction pour mettre à jour l'affichage
 
