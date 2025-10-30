@@ -35,7 +35,7 @@ let counter = 0;
 leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
 paragraphe.innerHTML = slides[counter].tagLine;
 
-// 👉 Flèche droite
+//  Flèche droite
 arrow_right.addEventListener("click", (e) => {
   counter++; // d'abord on avance
   if (counter > slides.length - 1) {
@@ -45,7 +45,7 @@ arrow_right.addEventListener("click", (e) => {
   paragraphe.innerHTML = slides[counter].tagLine;
 });
 
-// 👉 Flèche gauche
+//  Flèche gauche
 arrow_left.addEventListener("click", (e) => {
   console.log('target', e);
     counter--; // d'abord on recule
@@ -56,13 +56,19 @@ arrow_left.addEventListener("click", (e) => {
   paragraphe.innerHTML = slides[counter].tagLine;
 });
 
+// Recuperation des dots : 
+
+const dots = document.querySelectorAll(".dot");
+console.log("dots" + dots);
+
+
 // Fonction pour mettre à jour l'affichage
 
 // function updateSlide(index) {
 //   // Met à jour l'image
-//   bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
-//   // Met à jour le texte
-//   bannerText.innerHTML = slides[index].tagLine;
+  bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
+  // Met à jour le texte
+  bannerText.innerHTML = slides[index].tagLine;
 
 //   // Met à jour les classes des dots
 //   dots.forEach((dot) => dot.classList.remove("dot_selected"));
