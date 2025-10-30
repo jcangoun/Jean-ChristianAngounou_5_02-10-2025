@@ -45,10 +45,11 @@ arrow_right.addEventListener("click", (e) => {
   paragraphe.innerHTML = slides[counter].tagLine;
   console.log(counter);
 });
-updateDots();
+// updateDots();
 
 // je fais une une reattribution de dots
-  updateDots(); // 🔹 mise à jour visuelle des dots
+  // updateDots();
+   // 🔹 mise à jour visuelle des dots
 
 //  Flèche gauche
 arrow_left.addEventListener("click", (e) => {
@@ -78,7 +79,6 @@ dots.forEach(dot => {
 
   });
 });
-
 
 // Fonction pour mettre à jour l'affichage
 
