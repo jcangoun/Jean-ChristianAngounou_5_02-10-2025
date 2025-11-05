@@ -75,28 +75,16 @@ dots.forEach(dot => {
     
     // On ajoute "dot_selected" uniquement à celui qu'on vient de cliquer
     e.target.classList.add("dot_selected");
-    console.log(e.target);
-
+    console.log(e.target, e.target.id );
+    
   });
 });
 
 // Fonction pour mettre à jour l'affichage
 
-// function updateSlide(index) {
+
 //   // Met à jour l'image
-  bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
+  leBanner.src = `./assets/images/slideshow/${slides[index].image}`;
   // Met à jour le texte
-  bannerText.innerHTML = slides[index].tagLine;
+  tagLine.innerHTML = slides[index].tagLine;
 
-//   // Met à jour les classes des dots
-//   dots.forEach((dot) => dot.classList.remove("dot_selected"));
-//   dots[index].classList.add("dot_selected");
-// }
-
-// Ajout des écouteurs d'événements sur chaque dot
-
-// dots.forEach((dot, index) => {
-//   dot.addEventListener("click", () => {
-//     updateSlide(index);
-//   });
-// });
