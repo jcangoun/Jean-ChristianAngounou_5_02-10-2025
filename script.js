@@ -43,14 +43,15 @@ paragraphe.innerHTML = slides[counter].tagLine;
   // Met à jour le texte
   paragraphe.innerHTML = slides[counter].tagLine;
 
-  // Met à jour les dots
+  //     // On retire "dot_selected" de tous les dots
   dots.forEach(d => d.classList.remove("dot_selected"));
+   // On ajoute "dot_selected" au dot cliqué
   dots[counter].classList.add("dot_selected");
 }
 
 
 
-//  Attribution counter flèche droite
+//  Attribution counter f lèche droite
 arrow_right.addEventListener("click", (e) => {
   counter++; // d'abord on avance
   if (counter > slides.length - 1) {
@@ -61,7 +62,7 @@ arrow_right.addEventListener("click", (e) => {
 });
 
 
-//  Attribution counter flèche gauche
+//  Attribution counter f lèche gauche
 arrow_left.addEventListener("click", (e) => {
   console.log('target', e);
     counter--; // d'abord on recule
@@ -75,17 +76,14 @@ arrow_left.addEventListener("click", (e) => {
 // Recuperation des dots : 
 
 const dots = document.querySelectorAll(".dot");
-const counterIded = counter + 1;
 
-dots.forEach(dot => {
-  dot.addEventListener("click", (e) => {
-    // On retire "dot_selected" de tous les dots
-    dots.forEach(d => d.classList.remove("dot_selected"));
-    
-    // On ajoute "dot_selected" uniquement à celui qu'on vient de cliquer
-    e.target.classList.add("dot_selected");
-    console.log(e.target, e.target.id );
-    
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    //  on met à jour le compteur
+    counter = index;       
+    //  on met à jour tout le slider (image, texte, dots)
+    MajSlider();        
   });
 });
 
