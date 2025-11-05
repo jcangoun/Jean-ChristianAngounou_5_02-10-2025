@@ -35,32 +35,41 @@ let counter = 0;
 leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
 paragraphe.innerHTML = slides[counter].tagLine;
 
-//  Flèche droite
+
+  function MajSlider() {
+  // Met à jour l'image
+  leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
+  
+  // Met à jour le texte
+  paragraphe.innerHTML = slides[counter].tagLine;
+
+  // Met à jour les dots
+  dots.forEach(d => d.classList.remove("dot_selected"));
+  dots[counter].classList.add("dot_selected");
+}
+
+
+
+//  Attribution counter flèche droite
 arrow_right.addEventListener("click", (e) => {
   counter++; // d'abord on avance
   if (counter > slides.length - 1) {
     counter = 0; // on revient au début
   }
-  leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
-  paragraphe.innerHTML = slides[counter].tagLine;
-  console.log(counter);
+    MajSlider();
+    console.log(counter);
 });
-// updateDots();
 
-// je fais une une reattribution de dots
-  // updateDots();
-   // 🔹 mise à jour visuelle des dots
 
-//  Flèche gauche
+//  Attribution counter flèche gauche
 arrow_left.addEventListener("click", (e) => {
   console.log('target', e);
     counter--; // d'abord on recule
   if (counter < 0) {
     counter = slides.length - 1; // on revient à la fin
   }
-  leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
-  paragraphe.innerHTML = slides[counter].tagLine;
-  console.log(counter);
+    MajSlider();
+    console.log(counter);
 });
 
 // Recuperation des dots : 
@@ -82,9 +91,13 @@ dots.forEach(dot => {
 
 // Fonction pour mettre à jour l'affichage
 
+// //   // code de mise à jour de l'image
+//   leBanner.src = `./assets/images/slideshow/${slides[index].image}`;
+//   // Met à jour le texte
+//   tagLine.innerHTML = slides[index].tagLine;
 
-//   // Met à jour l'image
-  leBanner.src = `./assets/images/slideshow/${slides[index].image}`;
-  // Met à jour le texte
-  tagLine.innerHTML = slides[index].tagLine;
+
+
+
+
 
