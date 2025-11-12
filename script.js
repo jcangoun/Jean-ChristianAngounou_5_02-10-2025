@@ -28,13 +28,12 @@ const arrow_right = document.querySelector(".arrow_right");
 const leBanner = document.querySelector(".banner-img");
 const paragraphe = document.querySelector(".banner-img + p");
 
-// 🔹 On part du premier slide
+//  On part du premier slide
 let counter = 0;
 
-// 🔹 Initialisation correcte
+//  Initialisation correcte
 leBanner.src = `./assets/images/slideshow/${slides[counter].image}`;
 paragraphe.innerHTML = slides[counter].tagLine;
-
 
   function MajSlider() {
   // Met à jour l'image
@@ -43,15 +42,14 @@ paragraphe.innerHTML = slides[counter].tagLine;
   // Met à jour le texte
   paragraphe.innerHTML = slides[counter].tagLine;
 
-  //     // On retire "dot_selected" de tous les dots
+  // On retire "dot_selected" de tous les dots
   dots.forEach(d => d.classList.remove("dot_selected"));
    // On ajoute "dot_selected" au dot cliqué
   dots[counter].classList.add("dot_selected");
 }
 
 
-
-//  Attribution counter f lèche droite
+//  Attribution counter flèche droite
 arrow_right.addEventListener("click", (e) => {
   counter++; // d'abord on avance
   if (counter > slides.length - 1) {
@@ -62,7 +60,7 @@ arrow_right.addEventListener("click", (e) => {
 });
 
 
-//  Attribution counter f lèche gauche
+//  Attribution counter flèche gauche
 arrow_left.addEventListener("click", (e) => {
   console.log('target', e);
     counter--; // d'abord on recule
@@ -86,13 +84,6 @@ dots.forEach((dot, index) => {
     MajSlider();        
   });
 });
-
-// Fonction pour mettre à jour l'affichage
-
-// //   // code de mise à jour de l'image
-//   leBanner.src = `./assets/images/slideshow/${slides[index].image}`;
-//   // Met à jour le texte
-//   tagLine.innerHTML = slides[index].tagLine;
 
 
 
